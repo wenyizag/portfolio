@@ -1,3 +1,27 @@
+.menu-btn {
+  position: fixed;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all .3s ease-out; }
+  .menu-btn .btn-line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 4px;
+    transition: all .3s ease-out; }
+  .menu-btn .btn-line:nth-child(2) {
+    transition: all 0s; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px); }
+
 * {
   box-sizing: border-box; }
 

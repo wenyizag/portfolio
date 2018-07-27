@@ -1,6 +1,108 @@
-$primary-color: #444;
+@import 'config';
+
+*{
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 10px;
+}
 
 body{
+	@include background;
+	margin: 0;
 	background: $primary-color;
-	color: white;
+	color: $text-color;
+	height: 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
+a{
+	color: $text-color;
+	text-decoration: none;
+}
+
+.head{
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+
+h1,
+h2,
+h3{
+	margin: 0;
+	font-weight: 400;
+
+	&.lg-heading{
+		font-family: 'Permanent Marker', cursive;
+		font-size: 8rem;
+		letter-spacing: 1px;
+
+		.text-secondary{
+			color: $secondary-color;
+		}
+	}
+
+	&.sm-heading{
+		font-size: 2rem;
+		padding: 0.2rem 3rem;
+		background: rgba(lighten($primary-color, 2), 0.5);
+		letter-spacing: 1px;
+		display: inline-block;
+	}
+
+	&.quote{
+		margin-top: 4rem;
+		font-family: 'Nanum Pen Script', cursive;
+		font-weight: lighter;
+		text-align: right;
+		font-size: 2.3rem;
+		line-height: 1;
+	}
+}
+
+main{
+	padding: 5rem;
+	height: 100%;
+	text-align: center;
+
+	&#home{
+		overflow: hidden;
+
+		h1{
+			margin-top: 15vh;
+		}
+	}
+	
+	.wrap{
+		width: 70%;
+		position: relative;
+		left: 15%;
+	
+		.icons{
+			text-align: right;
+			margin-top: 2rem;
+
+			a{
+				color: $secondary-color;
+				padding: 0.4rem;
+
+				&:hover{
+					color: $text-color;
+					@include easeOut();
+				}
+			}
+		}	
+	}
+	
+
+}
+
+
+
+
+

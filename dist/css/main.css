@@ -1,3 +1,91 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
 body {
+  margin: 0;
   background: #444;
-  color: white; }
+  color: white;
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  body#bg-img {
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed; }
+  body .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(68, 68, 68, 0.8);
+    z-index: -1; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+.head {
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 8rem;
+    letter-spacing: 1px; }
+    h1.lg-heading .text-secondary,
+    h2.lg-heading .text-secondary,
+    h3.lg-heading .text-secondary {
+      color: #eece1a; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    font-size: 2rem;
+    padding: 0.2rem 3rem;
+    background: rgba(73, 73, 73, 0.5);
+    letter-spacing: 1px;
+    display: inline-block; }
+  h1.quote,
+  h2.quote,
+  h3.quote {
+    margin-top: 4rem;
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: lighter;
+    text-align: right;
+    font-size: 2.3rem;
+    line-height: 1; }
+
+main {
+  padding: 5rem;
+  height: 100%;
+  text-align: center; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 15vh; }
+  main .wrap {
+    width: 70%;
+    position: relative;
+    left: 15%; }
+    main .wrap .icons {
+      text-align: right;
+      margin-top: 2rem; }
+      main .wrap .icons a {
+        color: #eece1a;
+        padding: 0.4rem; }
+        main .wrap .icons a:hover {
+          color: white;
+          transition: all .3s ease-out; }

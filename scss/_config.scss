@@ -15,16 +15,19 @@ $background-opacity: 0.8;
 			background: $home-image;
 			background-size: cover;
 			background-attachment: fixed;
+
+			&::after{
+				content:'';
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba($primary-color, $background-opacity);
+				z-index: -1;
+			}
 		}
 
-		.overlay{
-			position: absolute;
-			top: 0;
-			right: 0;
-			height: 100%;
-			width: 100%;
-			background-color: rgba($primary-color, $background-opacity);
-			z-index: -1;
-		}
+		
 	}
 }

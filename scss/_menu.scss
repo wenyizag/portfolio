@@ -34,3 +34,99 @@
 		}
 	}
 }
+
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	visibility: hidden;
+
+	&.show{
+		visibility: visible;
+	}
+	
+	.menu-branding, .menu-nav{
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		// overflow: hidden;
+		flex-flow: column wrap;
+		float: left;
+		justify-content: center;
+		align-items: center;
+		background: $primary-color;
+		opacity: .9;
+		width: 50%;
+		height: 100vh;	
+	}
+
+	.menu-nav{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background: darken($primary-color, 7);
+		transform: translate3d(0, -100%, 0);
+		@include easeOut;
+
+		&.show{
+			transform: translate3d(0, 0, 0);
+		}
+
+		.nav-item{
+			transform: translate3d(600px, 0, 0);
+			@include easeOut;
+
+			&.show{
+			transform: translate3d(0, 0, 0);
+			}
+
+			&.active > a{
+				color: $secondary-color;
+			}
+		}
+
+		.nav-link{
+			display: inline-block;
+			position: relative;
+			text-transform: uppercase;
+			font-size: 2.5rem;
+			font-weight: 300;
+			padding: 2rem 0;
+			@include easeOut;
+
+			&:hover{
+				color: $secondary-color;
+				background: $primary-color;
+			}
+		}
+	}
+
+	.menu-branding{
+		transform: translate3d(0, 100%, 0);
+		@include easeOut;
+
+		&.show{
+			transform: translate3d(0, 0, 0);
+		}
+
+		.portrait{
+			height: 250px;
+			width: 250px;
+			border-radius: 50%;
+			border: solid 5px $secondary-color;
+			background: url(../img/portrait.jpg);
+		}
+	}
+
+}
+
+//nav item delay
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * .1s !important;
+  }
+}

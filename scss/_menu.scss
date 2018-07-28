@@ -9,7 +9,7 @@
 	.btn-line{
 		width: 30px;
 		height: 4px;
-		background-color: $text-color;
+		background-color: set-text-color($primary-color);
 		margin-bottom: 4px;
 		@include easeOut;
 	}
@@ -95,7 +95,7 @@
 			text-transform: uppercase;
 			font-size: 2.5rem;
 			font-weight: 300;
-			padding: 2rem 0;
+			padding: 2rem 3rem;
 			@include easeOut;
 
 			&:hover{

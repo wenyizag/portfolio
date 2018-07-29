@@ -58,8 +58,6 @@
 		float: left;
 		justify-content: center;
 		align-items: center;
-		background: $primary-color;
-		opacity: .9;
 		width: 50%;
 		height: 100vh;	
 	}
@@ -68,7 +66,7 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		background: darken($primary-color, 7);
+		background-color: rgba($text-color, 0.8);
 		transform: translate3d(0, -100%, 0);
 		@include easeOut;
 
@@ -90,22 +88,25 @@
 		}
 
 		.nav-link{
-			display: inline-block;
+			color: $primary-color;
+			display: block;
 			position: relative;
 			text-transform: uppercase;
 			font-size: 2.5rem;
-			font-weight: 300;
+			font-weight: 200;
+			font-family: 'Permanent Marker', cursive;
 			padding: 2rem 3rem;
 			@include easeOut;
 
 			&:hover{
 				color: $secondary-color;
-				background: $primary-color;
+				transform: scale(1.1);
 			}
 		}
 	}
 
 	.menu-branding{
+		background-color: rgba($primary-color, 0.8);
 		transform: translate3d(0, 100%, 0);
 		@include easeOut;
 
@@ -114,11 +115,13 @@
 		}
 
 		.portrait{
+			// opacity: 1 !important;
 			height: 250px;
 			width: 250px;
 			border-radius: 50%;
 			border: solid 5px $secondary-color;
-			background: url(../img/portrait.jpg);
+			background: url(../img/portrait.jpeg);
+			background-size: cover;
 		}
 	}
 

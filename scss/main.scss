@@ -14,7 +14,7 @@ body{
 	@include background;
 	margin: 0;
 	background: $primary-color;
-	color: set-text-color($primary-color);
+	color: $text-color;
 	height: 100%;
 	font-family: 'Source Sans Pro', sans-serif;
 	line-height: 1.5;
@@ -46,20 +46,16 @@ h3{
 		letter-spacing: 1px;
 	}
 
-	.text-secondary{
-			color: $secondary-color;
-	}
-
 	&.sm-heading{
 		font-size: 2rem;
-		padding: 0.2rem 3rem;
-		background: rgba(lighten($primary-color, 2), 0.5);
+		padding: 0.2rem 1rem;
+		border: solid 1px set-text-color($primary-color);
 		letter-spacing: 1px;
 		display: inline-block;
 	}
 
 	&.quote{
-		margin-top: 4rem;
+		margin-top: 10vh;
 		font-family: 'Nanum Pen Script', cursive;
 		font-weight: lighter;
 		text-align: right;
@@ -79,6 +75,10 @@ main{
 		h1{
 			margin-top: 15vh;
 		}
+	}
+
+	.text-secondary{
+			color: $secondary-color;
 	}
 }
 
@@ -109,12 +109,14 @@ main{
 	text-align: left;
 	// width: 100%;
 
-	.lg-heading, .sm-heading{	
+	.lg-heading, .quote{	
 		display: block;
 	}
 
-	.sm-heading{
+	.quote{
 		margin-bottom: 20px;
+		text-align: left;
+		margin: 0 0 5rem 0;
 	}
 
 	.about-info{
@@ -128,7 +130,8 @@ main{
         	grid-area: bio-image;
 			border-radius: 50%;
 			margin: auto;
-			border: $secondary-color solid 5px;
+			border: $secondary-color solid 3px;
+			width: 80%;
         }
 
         .bio{
@@ -137,9 +140,10 @@ main{
 
         .job{
         	border-radius: 5px;
-        	background: lighten($primary-color, 5);
+        	background: darken($primary-color, 5);
         	padding: .7rem;
         	border-bottom: $secondary-color solid 5px;
+    		box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
         }
 
         .job-1{
@@ -157,8 +161,10 @@ main{
 }
 
 #work{
-	.sm-heading{
+	.quote{
 		margin-bottom: 3rem;
+		text-align: center;
+		margin: 0 0 5rem 0;
 	}
 
 	.projects{
@@ -169,12 +175,16 @@ main{
 		.project-image{
 			width: 100%;
 			border: 3px solid set-text-color($primary-color);
-			// box-shadow: 1px 2px 10px 0px rgba(set-text-color($primary-color), 0.2);
+		}
+
+		.item{
+			@include easeOut;
 
 			&:hover{
-				opacity: .5;
-				border-color: $secondary-color;
-				@include easeOut;
+				transform: scale(1.05);
+				-webkit-box-shadow: 0 10px 6px -6px #777;
+				-moz-box-shadow: 0 10px 6px -6px #777;
+				box-shadow: 0 10px 6px -6px #777;
 			}
 		}
 	}
@@ -191,6 +201,27 @@ main{
 		}
 	}
 
+}
+
+#contact{
+	.quote{
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.boxes{
+		.email{
+			display: inline-block;
+			padding: 2rem 5rem;
+			border: 3px solid $secondary-color;
+			@include easeOut;
+			&:hover{
+				transform: scale(1.1);
+				-webkit-box-shadow: 0 10px 6px -6px #777;
+				-moz-box-shadow: 0 10px 6px -6px #777;
+				box-shadow: 0 10px 6px -6px #777;
+			}
+		}	
+	}
 }
 
 #main-footer{

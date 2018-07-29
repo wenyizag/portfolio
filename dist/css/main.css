@@ -8,7 +8,7 @@
   .menu-btn .btn-line {
     width: 30px;
     height: 4px;
-    background-color: white;
+    background-color: #343a40;
     margin-bottom: 4px;
     transition: all .3s ease-out; }
   .menu-btn .btn-line:nth-child(2) {
@@ -41,15 +41,13 @@
     float: left;
     justify-content: center;
     align-items: center;
-    background: #333;
-    opacity: .9;
     width: 50%;
     height: 100vh; }
   .menu .menu-nav {
     margin: 0;
     padding: 0;
     list-style: none;
-    background: #212121;
+    background-color: rgba(51, 51, 51, 0.8);
     transform: translate3d(0, -100%, 0);
     transition: all .3s ease-out; }
     .menu .menu-nav.show {
@@ -62,17 +60,20 @@
       .menu .menu-nav .nav-item.active > a {
         color: #eece1a; }
     .menu .menu-nav .nav-link {
-      display: inline-block;
+      color: #fff;
+      display: block;
       position: relative;
       text-transform: uppercase;
       font-size: 2.5rem;
-      font-weight: 300;
+      font-weight: 200;
+      font-family: 'Permanent Marker', cursive;
       padding: 2rem 3rem;
       transition: all .3s ease-out; }
       .menu .menu-nav .nav-link:hover {
         color: #eece1a;
-        background: #333; }
+        transform: scale(1.1); }
   .menu .menu-branding {
+    background-color: rgba(255, 255, 255, 0.8);
     transform: translate3d(0, 100%, 0);
     transition: all .3s ease-out; }
     .menu .menu-branding.show {
@@ -82,7 +83,8 @@
       width: 250px;
       border-radius: 50%;
       border: solid 5px #eece1a;
-      background: url(../img/portrait.jpg); }
+      background: url(../img/portrait.jpeg);
+      background-size: cover; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s !important; }
@@ -104,8 +106,8 @@ html {
 
 body {
   margin: 0;
-  background: #333;
-  color: white;
+  background: #fff;
+  color: #333;
   height: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
@@ -123,11 +125,11 @@ body {
       right: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(51, 51, 51, 0.8);
+      background-color: rgba(255, 255, 255, 0.36);
       z-index: -1; }
 
 a {
-  color: white;
+  color: #343a40;
   text-decoration: none; }
 
 .head {
@@ -146,22 +148,18 @@ h3 {
     font-family: 'Permanent Marker', cursive;
     font-size: 8rem;
     letter-spacing: 1px; }
-  h1 .text-secondary,
-  h2 .text-secondary,
-  h3 .text-secondary {
-    color: #eece1a; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
     font-size: 2rem;
-    padding: 0.2rem 3rem;
-    background: rgba(56, 56, 56, 0.5);
+    padding: 0.2rem 1rem;
+    border: solid 1px #343a40;
     letter-spacing: 1px;
     display: inline-block; }
   h1.quote,
   h2.quote,
   h3.quote {
-    margin-top: 4rem;
+    margin-top: 10vh;
     font-family: 'Nanum Pen Script', cursive;
     font-weight: lighter;
     text-align: right;
@@ -176,6 +174,8 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 15vh; }
+  main .text-secondary {
+    color: #eece1a; }
 
 #home .wrap {
   width: 70%;
@@ -188,15 +188,17 @@ main {
       color: #eece1a;
       padding: 0.4rem; }
       #home .wrap .icons a:hover {
-        color: white;
+        color: #343a40;
         transition: all .3s ease-out; }
 
 #about {
   text-align: left; }
-  #about .lg-heading, #about .sm-heading {
+  #about .lg-heading, #about .quote {
     display: block; }
-  #about .sm-heading {
-    margin-bottom: 20px; }
+  #about .quote {
+    margin-bottom: 20px;
+    text-align: left;
+    margin: 0 0 5rem 0; }
   #about .about-info {
     display: grid;
     grid-template-areas: "bio-image bio bio" "job-1 job-2 job-3";
@@ -206,14 +208,16 @@ main {
       grid-area: bio-image;
       border-radius: 50%;
       margin: auto;
-      border: #eece1a solid 5px; }
+      border: #eece1a solid 3px;
+      width: 80%; }
     #about .about-info .bio {
       grid-area: bio; }
     #about .about-info .job {
       border-radius: 5px;
-      background: #404040;
+      background: #f2f2f2;
       padding: .7rem;
-      border-bottom: #eece1a solid 5px; }
+      border-bottom: #eece1a solid 5px;
+      box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4); }
     #about .about-info .job-1 {
       grid-area: job-1; }
     #about .about-info .job-2 {
@@ -221,8 +225,10 @@ main {
     #about .about-info .job-3 {
       grid-area: job-3; }
 
-#work .sm-heading {
-  margin-bottom: 3rem; }
+#work .quote {
+  margin-bottom: 3rem;
+  text-align: center;
+  margin: 0 0 5rem 0; }
 
 #work .projects {
   display: grid;
@@ -230,27 +236,45 @@ main {
   grid-template-columns: repeat(3, 1fr); }
   #work .projects .project-image {
     width: 100%;
-    border: 3px solid white; }
-    #work .projects .project-image:hover {
-      opacity: .5;
-      border-color: #eece1a;
-      transition: all .3s ease-out; }
+    border: 3px solid #343a40; }
+  #work .projects .item {
+    transition: all .3s ease-out; }
+    #work .projects .item:hover {
+      transform: scale(1.05);
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777; }
 
 #work .view {
   display: block;
   padding: 0.5rem 0;
-  background: #262626;
+  background: #f2f2f2;
   border-radius: 5px;
   transition: all .3s ease-out; }
   #work .view:hover {
     background: #eece1a;
-    color: white; }
+    color: #343a40; }
+
+#contact .quote {
+  text-align: center;
+  margin-bottom: 3rem; }
+
+#contact .boxes .email {
+  display: inline-block;
+  padding: 2rem 5rem;
+  border: 3px solid #eece1a;
+  transition: all .3s ease-out; }
+  #contact .boxes .email:hover {
+    transform: scale(1.1);
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777; }
 
 #main-footer {
   text-align: center;
   padding: 1rem;
-  background: #1a1a1a;
-  color: white;
+  background: #e6e6e6;
+  color: #343a40;
   height: 60px; }
 
 @media screen and (min-width: 1171px) {
@@ -283,8 +307,7 @@ main {
     transform: translate3d(-100%, 0, 0) !important; }
     .menu-branding .portrait {
       width: 150px !important;
-      height: 150px !important;
-      background: url(../img/portrait_small.jpg) !important; }
+      height: 150px !important; }
   .menu-nav {
     height: 70vh !important;
     transform: translate3d(100%, 0, 0) !important; }

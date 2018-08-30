@@ -13,7 +13,6 @@ html{
 body{
 	@include background;
 	margin: 0;
-	padding: 0 30px;
 	background: $primary-color;
 	color: $text-color;
 	height: 100%;
@@ -108,6 +107,7 @@ main{
 
 #about{
 	text-align: left;
+	padding: 0 90px;
 	// width: 100%;
 
 	.lg-heading, .quote{	
@@ -126,6 +126,7 @@ main{
                       		 "job-1 job-2 job-3";
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
+        margin-bottom: 50px;
 
         .bio-image{
         	grid-area: bio-image;

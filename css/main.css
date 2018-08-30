@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .menu-btn {
   position: fixed;
   right: 35px;
@@ -83,7 +84,7 @@
       width: 250px;
       border-radius: 50%;
       border: solid 5px #eece1a;
-      background: url(../img/portrait.jpeg);
+      background: url(../img/portrait4.png);
       background-size: cover; }
 
 .nav-item:nth-child(1) {
@@ -106,6 +107,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0 30px;
   background: #fff;
   color: #333;
   height: 100%;
@@ -211,13 +213,66 @@ main {
       border: #eece1a solid 3px;
       width: 80%; }
     #about .about-info .bio {
-      grid-area: bio; }
+      grid-area: bio;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 5px;
+      box-shadow: 0 16px 16px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.15); }
+      #about .about-info .bio .bio-bar {
+        position: relative;
+        height: 30px;
+        border-radius: 5px 5px 0 0;
+        background: linear-gradient(#EBEBEB, #E0E0E0, #D3D3D3);
+        text-align: center;
+        border-bottom: solid 2px #c5c5c5; }
+        #about .about-info .bio .bio-bar .circle {
+          display: inline-block;
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          top: 7px; }
+        #about .about-info .bio .bio-bar .circle-1 {
+          left: 20px;
+          background: #EC6B60; }
+        #about .about-info .bio .bio-bar .circle-2 {
+          left: 44px;
+          background: #F6BE50; }
+        #about .about-info .bio .bio-bar .circle-3 {
+          left: 68px;
+          background: #63C655; }
+      #about .about-info .bio .bio-description {
+        padding: 20px; }
     #about .about-info .job {
       border-radius: 5px;
       background: #f2f2f2;
       padding: .7rem;
       border-bottom: #eece1a solid 5px;
       box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4); }
+      #about .about-info .job hr.style-eight {
+        overflow: visible;
+        /* For IE */
+        padding: 0;
+        border: none;
+        border-top: medium double #eece1a;
+        color: #eece1a;
+        text-align: center; }
+      #about .about-info .job hr.style-eight:after {
+        content: "§";
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.1em;
+        background: #f2f2f2; }
+      #about .about-info .job h3 {
+        font-size: 1.6rem;
+        display: block;
+        height: 40px; }
+      #about .about-info .job .job-title {
+        margin: 0.1rem 0; }
+      #about .about-info .job p {
+        font-size: 1.4rem; }
     #about .about-info .job-1 {
       grid-area: job-1; }
     #about .about-info .job-2 {

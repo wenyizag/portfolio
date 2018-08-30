@@ -13,6 +13,7 @@ html{
 body{
 	@include background;
 	margin: 0;
+	padding: 0 30px;
 	background: $primary-color;
 	color: $text-color;
 	height: 100%;
@@ -135,7 +136,47 @@ main{
         }
 
         .bio{
-        	grid-area: bio;
+			grid-area: bio;
+			width: 100%;
+			margin: 0 auto;
+  			border-radius: 5px;
+  			box-shadow: 0 16px 16px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
+
+			.bio-bar{
+				position: relative;
+				height: 30px;
+				border-radius: 5px 5px 0 0 ;
+				background: linear-gradient(#EBEBEB, #E0E0E0, #D3D3D3);
+				text-align: center;
+				border-bottom: solid 2px #c5c5c5;
+
+				.circle{
+					display: inline-block;
+					position: absolute;
+					height: 15px;
+					width: 15px;
+					border-radius: 50%;
+					top: 7px;
+				}
+
+				.circle-1{
+					left: 20px;
+					background: #EC6B60;
+				}
+				.circle-2{
+					left: 44px;
+					background: #F6BE50;
+				}
+				.circle-3{
+					left: 68px;
+					background: #63C655;
+				}
+				
+			}
+
+        	.bio-description{
+				padding: 20px;
+        	}	
         }
 
         .job{
@@ -144,6 +185,35 @@ main{
         	padding: .7rem;
         	border-bottom: $secondary-color solid 5px;
     		box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+
+    		hr.style-eight {
+			    overflow: visible; /* For IE */
+			    padding: 0;
+			    border: none;
+			    border-top: medium double $secondary-color;
+			    color: $secondary-color;
+			    text-align: center;
+			}
+			hr.style-eight:after {
+			    content: "§";
+			    display: inline-block;
+			    position: relative;
+			    top: -0.7em;
+			    font-size: 1.5em;
+			    padding: 0 0.1em;
+			    background: #f2f2f2;
+			}
+			h3{
+				font-size: 1.6rem;
+				display: block;
+				height: 40px;
+			}
+			.job-title{
+				margin: 0.1rem 0;
+			}
+			p{
+				font-size: 1.4rem;
+			}
         }
 
         .job-1{
